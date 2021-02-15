@@ -3,10 +3,61 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:TheXamlGuy.NotificationFlyout.Uwp.UI.Controls">
-    <Grid Width="400" Height="300">
-        <TextBlock
+    <Grid Width="400" Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="42" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Grid.Column="0"
+                Width="94"
+                Height="94"
+                Background="Gray"
+                CornerRadius="4">
+                <Image Stretch="UniformToFill" />
+            </Border>
+            <StackPanel Grid.Column="1" Margin="12,12,0,0">
+                <TextBlock Style="{StaticResource BaseTextBlockStyle}" Text="Artist Name" />
+                <TextBlock Text="Track Title" />
+            </StackPanel>
+        </Grid>
+        <Slider Grid.Row="1" />
+        <Grid Grid.Row="2">
+            <TextBlock HorizontalAlignment="Left" Text="00:00" />
+            <TextBlock HorizontalAlignment="Right" Text="04:16" />
+        </Grid>
+        <CommandBar
+            Grid.Row="3"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Text="Nothing to see here yet" />
+            Background="Transparent"
+            DefaultLabelPosition="Collapsed">
+            <AppBarButton Width="48" CornerRadius="4">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE100;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Width="48" CornerRadius="4">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE102;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Width="48" CornerRadius="4">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE103;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Width="48" CornerRadius="4">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE101;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
     </Grid>
 </controls:NotificationFlyout>
